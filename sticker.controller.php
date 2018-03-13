@@ -320,7 +320,7 @@ class stickerController extends sticker
 			return new Object(-1,'msg_fail_buy_sticker');
 		}
 
-		$checkBuyHistoryToday = $this->_checkBuyStickerToday($member_srl, $sticker_srl);
+		$checkBuyHistoryToday = (int)$this->_checkBuyStickerToday($member_srl, $sticker_srl);
 		if($sticker->member_srl != $member_srl && $checkBuyHistoryToday === 0){
 			$this->_increaseStickerBuyCount($sticker_srl);
 		}
